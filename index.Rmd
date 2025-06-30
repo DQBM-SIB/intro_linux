@@ -1,5 +1,5 @@
 ---
-title: "BIO609"
+title: "Linux"
 output: 
   xaringan::moon_reader:
     seal: false
@@ -29,23 +29,19 @@ options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
 ```
 
 
+class: inverse, middle, center
+
 <br>
 
-# .orange[BIO609 Introduction to `UNIX`/`Linux` and `Bash` Scripting]
+# .orange[Introduction to `UNIX`/`Linux` and `Bash` Scripting]
 
-#### 5<sup>th</sup> November, 2024
+### Deepak Kumar Tanwar
 
-### Deepak Kumar Tanwar<br><br>.orange[URPP Evolution in Action <br>Embedded bioinformatician]
+#### Bioinformatics Specialist and Trainer<br>Swiss Institute of Bioinformatics<br>University of Zurich
 
-### `r anicon::faa("twitter", animate="", colour = "#00acee")` [.white[@d_k_tanwar]](https://twitter.com/d_k_tanwar)
-### `r anicon::faa("envelope", animate="", colour = "#2395fb")` [.white[deepak.tanwar@evolution.uzh.ch]](mailto:deepak.tanwar@evolution.uzh.ch)
----
+### `r anicon::faa("envelope", animate="", colour = "#2395fb")` [.red1[deepak.tanwar@uzh.ch]](mailto:deepak.tanwar@uzh.ch)<br> `r anicon::faa("envelope", animate="", colour = "#2395fb")` [.red1[deepak.tanwar@sib.swiss]](mailto:deepak.tanwar@sib.swiss)
 
-class: left,hide_logo
-
-background-image: url("figs/01.png")
-background-size: contain
-background-position: 50% 5%
+### `r fontawesome::fa("bluesky",fill =  "#00acee")` [.red1[@dktanwar.bsky.social]](https://bsky.app/profile/dktanwar.bsky.social)
 
 ---
 
@@ -58,25 +54,25 @@ background-position: 50% 5%
 ```{r child='p2.Rmd'}
 ```   
 
----
+<!-- --- -->
 
-```{r child='p3.Rmd'}
-```
+<!-- ```{r child='p3.Rmd'} -->
+<!-- ``` -->
 
----
+<!-- --- -->
 
-```{r child='p4.Rmd'}
-```
+<!-- ```{r child='p4.Rmd'} -->
+<!-- ``` -->
 
----
+<!-- --- -->
 
-```{r child='p5.Rmd'}
-```
+<!-- ```{r child='p5.Rmd'} -->
+<!-- ``` -->
 
----
+<!-- --- -->
 
-```{r child='p6.Rmd'}
-```
+<!-- ```{r child='p6.Rmd'} -->
+<!-- ``` -->
 
 ---
 
