@@ -1,6 +1,9 @@
-name: Manual build and push
+name: Manual and Push Build
 
 on:
+  push:
+    branches:
+      - '**'     # Run on push to any branch
   workflow_dispatch:
 
 jobs:
