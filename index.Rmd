@@ -1,0 +1,85 @@
+---
+title: "BIO609"
+output: 
+  xaringan::moon_reader:
+    seal: false
+    libs: libs
+    css: ["css/xaringan.css", "default", "default-fonts"]
+    nature:
+      ratio: '16:9'
+      # beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightLines: true
+      highlightSpans: false
+      highlightStyle: github
+      countIncrementalSlides: false
+      countdown: false
+      slideNumberFormat: '%current%'
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+class: inverse, middle, center
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.duplicate.label = "allow")
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+```
+
+
+<br>
+
+# .orange[BIO609 Introduction to `UNIX`/`Linux` and `Bash` Scripting]
+
+#### 5<sup>th</sup> November, 2024
+
+### Deepak Kumar Tanwar<br><br>.orange[URPP Evolution in Action <br>Embedded bioinformatician]
+
+### `r anicon::faa("twitter", animate="", colour = "#00acee")` [.white[@d_k_tanwar]](https://twitter.com/d_k_tanwar)
+### `r anicon::faa("envelope", animate="", colour = "#2395fb")` [.white[deepak.tanwar@evolution.uzh.ch]](mailto:deepak.tanwar@evolution.uzh.ch)
+---
+
+class: left,hide_logo
+
+background-image: url("figs/01.png")
+background-size: contain
+background-position: 50% 5%
+
+---
+
+
+```{r child='p1.Rmd'}
+```
+
+---
+
+```{r child='p2.Rmd'}
+```   
+
+---
+
+```{r child='p3.Rmd'}
+```
+
+---
+
+```{r child='p4.Rmd'}
+```
+
+---
+
+```{r child='p5.Rmd'}
+```
+
+---
+
+```{r child='p6.Rmd'}
+```
+
+---
+
+class: center, middle, hide_logo
+
+.eLarge[.blue[**Thank you for your attention!**]]

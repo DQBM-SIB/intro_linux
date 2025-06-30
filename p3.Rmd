@@ -1,0 +1,107 @@
+---
+title: "Redirection"
+output: 
+  xaringan::moon_reader:
+    seal: false
+    libs: libs
+    css: ["css/xaringan.css", "default", "default-fonts"]
+    nature:
+      ratio: '16:9'
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightLines: true
+      highlightSpans: false
+      highlightStyle: github
+      countIncrementalSlides: false
+      countdown: false
+      slideNumberFormat: '%current%'
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+class: inverse, middle, center
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.duplicate.label = "allow")
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+```
+
+
+## .LARGE[.orange[Redirection]]
+
+---
+
+class: left,hide_logo
+
+class: center,hide_logo
+
+background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--6BUHx0iu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/2400/1%2Ay3_tArgpKbZp1CiR5MpKeg.png")
+background-size: 60%
+background-position: 50% 80%
+
+
+## .Large[.center[STDIN, STDOUT, and STDERR]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+---
+
+class: center,hide_logo
+
+background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f6/Pipeline.svg")
+background-size: 45%
+background-position: 50% 80%
+
+
+## .Large[.center[STDIN, STDOUT, and STDERR]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+background-image: url("https://miro.medium.com/proxy/1*vnibgmWDDM6ay-WQMyrQnQ.png")
+background-size: contain
+background-position: 50% 50%
+
+## .Large[Pipes]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+## .Large[.center[Redirection]]
+<br>
+
+.Large[
+| Symbols/ Commands  | Descriptions |
+| ------------- | ------------- |
+| **`>`** | Standard output redirection|
+| **`<`** | Standard Input redirection|
+| **`2>`** | Standard error redirection|
+| **`&>`** | Standard output and error redirection|
+| **`>>`** | Standard output redirection|
+| **`<<`** | Standard input redirection|
+| <b>&#x7c;</b> | Redirection using pipes |
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>

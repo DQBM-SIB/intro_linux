@@ -1,0 +1,574 @@
+/************************************
+ *
+ * Template-independent CSS code for formatting xaringan presentations
+ *
+ ************************************/
+
+/*.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }*/
+
+.remark-code, .remark-inline-code { font-family: 'Source Code Pro', 'Lucida Console', 'Monaco', monospace; }
+body { font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', 'Palatino', 'Microsoft YaHei', 'Songti SC', serif; }
+
+
+.remark-slide-content {
+  padding-top: 0px;
+  padding-left: 50px;
+  padding-right: 80px;
+  padding-bottom: 50px;
+}
+
+.remark-slide-content > h1:first-of-type {
+  margin-top: 0px;
+}
+
+
+/**************
+ *
+ * Font size and colours
+ *
+ **************/
+
+.eLarge { font-size: 444% }
+.LARGE { font-size: 200% }
+.Large { font-size: 144% }
+.large { font-size: 120% }
+.small { font-size: 90% }
+.footnotesize { font-size: 80% }
+.scriptsize { font-size: 70% }
+.tiny { font-size: 60% }
+
+.black { color: black; }
+.red { color: red; }
+.blue { color: blue; }
+.green { color: green; }
+.yellow { color: yellow; }
+.orange { color: orange; }
+.purple { color: purple; }
+.gray { color: gray; }
+.grey { color: gray; }
+.blue1 { color: #66ccff; }
+.green11 { color: #33cc33; }
+.green1 { color: #004d00; }
+.brown { color: #964B00; }
+
+
+.bold { font-weight: bold; }
+.bolder { font-weight: bolder; }
+
+
+/******************
+ * 
+ * Coloured content boxes
+ *
+ ****************/
+
+
+.content-box { 
+    box-sizing: content-box;
+    	background-color: #e2e2e2;
+  /* Total width: 160px + (2 * 20px) + (2 * 8px) = 216px
+     Total height: 80px + (2 * 20px) + (2 * 8px) = 136px
+     Content box width: 160px
+     Content box height: 80px */
+}
+
+.content-box-black,
+.content-box-blue,
+.content-box-gray,
+.content-box-grey,
+.content-box-army,
+.content-box-green,
+.content-box-orange,
+.content-box-purple,
+.content-box-red,
+.content-box-yellow {
+    border-radius: 15px;
+    margin: 0 0 25px;
+    overflow: hidden;
+    padding: 20px;
+    width: 100%;
+}
+
+.content-box-blue {
+    background-color: #F0F8FF;
+
+}
+
+.content-box-gray {
+    background-color: #e2e2e2;
+}
+
+.content-box-grey {
+	background-color: #F5F5F5;
+}
+
+.content-box-army {
+	background-color: #737a36;
+}
+
+.content-box-green {
+	background-color: #d9edc2;
+}
+
+.content-box-purple {
+	background-color: #e2e2f9;
+}
+
+.content-box-red {
+	background-color: #f9dbdb;
+}
+
+.content-box-yellow {
+	background-color: #fef5c4;
+}
+
+.content-box-orange {
+	background-color: orange;
+}
+
+
+.full-width {
+    display: flex;
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+
+/***********
+ *
+ * Changed CSS
+ *
+ **************/
+
+.opacity{
+    opacity: 0.5;
+}
+
+
+.blur {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+
+.grayscale img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+
+/**************
+ *
+ * Fancy stuff
+ *
+ **************/
+
+
+.rotate-left {
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    transform: rotate(-2deg); 
+}
+
+.rotate-right {
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    transform: rotate(2deg);     
+}
+
+
+
+/********** 
+ * 
+ * Image stuff
+ *
+ ************/
+
+
+.polaroid img {
+    border: 10px solid #fff;
+    border-bottom: 45px solid #fff;
+    -webkit-box-shadow: 3px 3px 3px #111;
+    -moz-box-shadow: 3px 3px 3px #111;
+    box-shadow: 3px 3px 3px #111;
+}
+
+
+
+.shadow {
+    -moz-border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #aaa;
+    -webkit-box-shadow: 5px 5px 5px #aaa;
+    box-shadow: 5px 5px 5px #aaa;
+    border-radius: 2px;  
+}
+
+
+/********** 
+ * 
+ * Inverse
+ *
+ ************/
+
+.inverse {
+  background-color: #272822;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+}
+
+/********** 
+ * 
+ * Title slide
+ *
+ ************/
+
+
+.title-slide {
+  background-image: url();
+  background-size: cover;
+}
+
+
+/*******************
+ *
+ * Text alignment / justification
+ *
+ *******************/
+
+.justify-left {
+  text-align: left;
+}
+
+.justify-right {
+  text-align: right;
+}
+
+.justify-center {
+  text-align: center;
+}
+
+
+/* fix the help page '?' */
+
+.remark-help-content td{
+  color: black !important;
+}
+
+.remark-backdrop {
+  background: #988675 !important;
+}
+
+
+/********** 
+ * 
+ * TOC style
+ *
+ ************/
+
+
+
+li.section { color: black; }
+
+li.subsection {font-size: .95em; 
+               list-style-type:circle;
+}
+
+/********** 
+*.remark-slide-content {
+*  padding-top: 0px;
+*  padding-left: 0px;
+*  padding-right: 0px;
+*  padding-bottom: 0px;
+*}
+************/
+
+div.my-footer {
+    background-color: #272822;
+    position: absolute;
+    bottom: 22px;
+    left: 0px;
+    height: 8px;
+    width: 35%;
+    background-color: #FFFFFF;
+}
+div.my-footer span {
+    font-size: 8pt;
+    color: blue;
+    position: absolute;
+    left: 10px;
+    bottom: 0px;
+}
+
+
+/* footer 5*/
+div.my-footer1 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 22px;
+    width: 19.25%;
+}
+
+div.my-footer2 {
+    position: absolute;
+    bottom: 0px;
+    left: 19.25%;
+    height: 22px;
+    width: 19.25%;
+}
+
+div.my-footer3 {
+    position: absolute;
+    bottom: 0px;
+    left: 38.5%;
+    height: 22px;
+    width: 19.25%;
+}
+
+div.my-footer4 {
+    position: absolute;
+    bottom: 0px;
+    left: 57.75%;
+    height: 22px;
+    width: 19.25%;
+}
+
+div.my-footer5 {
+    position: absolute;
+    bottom: 0px;
+    left: 77%;
+    height: 22px;
+    width: 19.25%;
+}
+
+/* end */
+
+/* footer 4*/
+
+div.my-ft4a {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 22px;
+    width: 24.25%;
+}
+
+div.my-ft4b {
+    position: absolute;
+    bottom: 0px;
+    left: 24.25%;
+    height: 22px;
+    width: 24.25%;
+}
+
+div.my-ft4c {
+    position: absolute;
+    bottom: 0px;
+    left: 48.5%;
+    height: 22px;
+    width: 24.25%;
+}
+
+div.my-ft4d {
+    position: absolute;
+    bottom: 0px;
+    left: 72.75%;
+    height: 22px;
+    width: 24.25%;
+}
+
+/* end */
+
+
+
+/*  footer */
+
+.footer-note {
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+}
+
+
+.remark-slide-number {
+  font-size: 12pt;
+  margin-bottom: -11.6px;
+  margin-right: -5px;
+  color: black;
+  opacity: 1;
+}
+
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+/********** 
+*.container {
+*  min-width: 310px;
+*  max-width: 800px;
+*  margin: 0 auto
+}
+
+*figcaption { 
+*    display: block;
+*    font-size: 0.6em;
+*}
+
+*iframe:focus { 
+*    outline: none;
+*}
+
+*iframe[seamless] { 
+*    display: block;
+*}
+**********/
+/* Two-column layout */
+.left-column {
+  width: 30%;
+  height: 92%;
+  float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+.right-column {
+  width: 65%;
+  float: right;
+  padding-top: 1em;
+}
+.left-columnR {
+  width: 65%;
+  height: 92%;
+  float: left;
+}
+.left-columnR h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+.right-columnR {
+  width: 30%;
+  float: right;
+  padding-top: 1em;
+}
+
+/* code and plots */
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+
+
+/********** 
+ * 
+ * Progressbar
+ *
+ 
+
+.remark-slide-number {
+      position: inherit;
+}
+
+.remark-slide-number .progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  display: block;
+  left: 0;
+  right: 0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: red;
+}
+ ************/
+ 
+ 
+ 
+ /********** 
+ * position: fixed;
+ **********/
+ div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+}
+
+ /********** 
+* position: relative;
+ **********/
+div.static {
+  position: static;
+  border: 3px solid #73AD21;
+}
+
+/********** 
+* position: absolute;
+**********/
+div.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+}
+
+.center-middle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.pr {
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+    border: 3px solid #B22222;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    text-align: center;
+    box-shadow: 1px 2px solid #B22222;
+    font-weight: bold;
+    font-size: 20px;
+    color: #005c99;
+    background-color: #fff0e0;
+}
+
+
+.comment {
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+    border: 3px solid #B22222;
+    position: absolute;
+    right: 10px;
+    top: 110px;
+    text-align: left;
+    box-shadow: 1px 2px solid #B22222;
+    font-size: 18px;
+    color: black;
+    background-color: #fff0e0;
+}
+
+
+.hide{
+visibility: hidden;
+}

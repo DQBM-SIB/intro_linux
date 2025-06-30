@@ -1,0 +1,234 @@
+---
+title: "problems"
+output: 
+  xaringan::moon_reader:
+    seal: false
+    libs: libs
+    css: ["css/xaringan.css", "default", "default-fonts"]
+    nature:
+      ratio: '16:9'
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightLines: true
+      highlightSpans: false
+      highlightStyle: github
+      countIncrementalSlides: false
+      countdown: false
+      slideNumberFormat: '%current%'
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+class: inverse, middle, center
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.duplicate.label = "allow")
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+```
+
+
+## .LARGE[.orange[Testing your knowledge]]
+
+---
+
+## .Large[Problem 1]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Exercise</b>] </div>
+
+
+.large[
+PFAM is a domain database. It also includes domains that have already been computed for all proteomes. The most recent version is available here: [https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/). Each file represents a proteome, which is recognized by its taxonomy ID. The ID `9606` belongs to a human. Each of these files is tab-delimited, with the domain ID in the sixth column. Using `wget`, download the human proteome file. After downloading, run a single line of `bash` commands to determine the number of domain types (unique domains) in the human genome. You may use as many commands as you want, connected together in `pipes`.
+]
+
+--
+
+<br>
+```perl
+wget https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/9606.tsv.gz
+```
+--
+```perl
+zcat 9606.tsv.gz | cut -f 6 | grep -v "#" | sort| uniq | wc -l
+```
+--
+<br>
+```perl
+6680
+```
+
+---
+
+## .Large[Problem 2]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Exercise</b>] </div>
+
+.large[
+Download the covid19 fasta file from [https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam_SARS-CoV-2_2.0/](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam_SARS-CoV-2_2.0/) using `wget` command.
+
+1. How many proteins are there?
+2. How many amino acids are there?
+3. Take only the protein sequences, and convert them to lower case.
+]
+
+--
+<br>
+
+```perl
+cat covid-19.fasta | grep ">" | wc -l
+```
+
+--
+
+```perl
+cat covid-19.fasta | grep -v ">" | tr -d "\n" | wc -c
+```
+
+--
+
+```perl
+cat covid-19.fasta | grep -v ">" | tr [:upper:] [:lower:]
+```
+
+---
+
+## .Large[Problem 3]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Exercise</b>] </div>
+
+.large[
+PFAM is a domain database. It also includes domains that have already been computed for all proteomes. The most recent version is available here: [https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/). Each file represents a proteome, which is recognized by its taxonomy ID. The ID `9606` belongs to a human. Each of these files is tab-delimited, with the domain ID in the sixth column.
+
+1. Make a directory in your home folder `software/bin`.
+2. Change directory to `software/bin`.
+3. Write a `bash` script that take an input: taxonomy ID.
+4. If file does not exist, Script should download the proteome file for the input taxonomy ID.
+5. Script should run a single line of `bash` commands to determine the number of domain types (unique domains) in the genome.
+6. Run step 5 **only if** step 4 is finished.
+7. Save your file as `count_uniq_domains`
+8. Add your script to `PATH`
+9. Go to your home folder.
+10. Create a `bash` script that will run `count_uniq_domains` (without specifying path). This script should store `STDOUT` and `STDERR`.
+]
+
+---
+
+## .Large[Problem 3]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Exercise</b>] </div>
+
+
+```bash
+# 1 and 2
+
+cd ~/
+mkdir software
+cd software
+mkdir bin
+```
+---
+
+## .Large[Problem 3]
+
+
+```bash
+# 3, 4, 5, 6, and 7
+
+nano count_uniq_domains
+
+#!/bin/bash
+
+txid=$1
+txid2=$txid.final.tsv.gz
+
+if [ -e $txid2 ]
+        then
+zcat $txid2 | grep -v "#" | cut -f 6 | sort| uniq| wc -l
+        else
+wget https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/$txid.tsv.gz &&\
+ mv $txid.tsv.gz $txid2 &&\
+ zcat $txid2 | grep -v "#" | cut -f 6 | sort| uniq| wc -l
+fi
+```
+
+---
+
+## .Large[Problem 3]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Exercise</b>] </div>
+
+```bash
+# 8
+
+chmod +x count_uniq_domains
+
+export PATH="~/software/bin/:$PATH"
+```
+
+```bash
+# 9
+
+cd ~/
+```
+
+```bash
+# 10
+
+nano run.sh
+
+#!/bin/bash
+
+count_uniq_domains 9696 > STDOUT 2>STDERR
+
+## close the file with ctrl + x
+
+bash run.sh
+```
+
+---
+
+## .Large[Resources]
+
+https://github.com/urppeia/BIO609_2016
+
+https://github.com/urppeia/BIO609_2017
+
+https://github.com/urppeia/BIO609_2018
+
+https://github.com/urppeia/bio609
+
+https://github.com/urppeia/BIO609_2021
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/bitly.png")
+background-size: 40%
+background-position: 50% 40%
+
+## .Large[Instructor and Course evaluation]
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+.content-box-green[.blue[.LARGE[[bit.ly/bio609_2024](https://bit.ly/bio609_2024)]]]

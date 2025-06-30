@@ -1,0 +1,287 @@
+---
+title: "Scripting"
+output: 
+  xaringan::moon_reader:
+    seal: false
+    libs: libs
+    css: ["css/xaringan.css", "default", "default-fonts"]
+    nature:
+      ratio: '16:9'
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightLines: true
+      highlightSpans: false
+      highlightStyle: github
+      countIncrementalSlides: false
+      countdown: false
+      slideNumberFormat: '%current%'
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+class: inverse, middle, center
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.duplicate.label = "allow")
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+```
+
+
+## .LARGE[.orange[`Bash` scripting]]
+
+---
+
+## .Large[.center[Text editors]]
+
+<br>
+
+- .LARGE[`nano`]
+
+- .LARGE[`vim`]
+
+- .LARGE[`emacs`]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+---
+
+
+## .Large[.center[Bash scripts]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+<br><br>
+
+.pull-left[
+```bash
+#!/bin/bash
+
+# This script will print ...
+
+echo "Hello World!"
+```
+]
+
+
+.pull-right[
+```bash
+# shebang line
+
+# a comment
+
+# code
+```
+]
+
+--
+
+.pull-left[
+```bash
+#!/bin/bash
+
+# This script will print my name
+
+name="Deepak Tanwar"
+
+echo "Hello $name!"
+```
+]
+
+.pull-right[
+```bash
+# shebang line
+
+# a comment
+
+# store name in a variable
+
+# print name
+```
+]
+
+---
+
+## .Large[.center[Bash script]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+.content-box-red[
+**Using `nano`, write a script to print your name.**
+]
+
+```bash
+nano name.sh # create a file using nano
+
+#!/bin/bash
+echo "Deepak Tanwar"
+
+# close the file with ctrl + x
+```
+
+--
+
+.content-box-red[
+**Redirect output as STDOUT: `name.stdout`.**
+]
+
+```bash
+bash name.sh > name.stdout
+```
+---
+
+## .Large[.center[Bash script]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+.content-box-red[
+**Redirect output as STDERR: `name.stderr`.**
+]
+
+```bash
+bash name.sh 2> name.stderr
+```
+
+--
+.content-box-red[
+**Append `name.stdout` with your favourite animal.**
+]
+
+```bash
+echo "Tiger" >> name.stdout
+```
+---
+
+## .Large[.center[Bash script]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+.content-box-red[
+**Append `name.stderr` with your favourite food.**
+]
+
+```bash
+echo "Fondue" 2>> name.stderr
+```
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/06.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[Flow control]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/07.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[`for` loop]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/08.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[`for` loop]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/09.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[`while` loop]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/10.png")
+background-size: 60%
+background-position: 50% 80%
+
+## .Large[if-else]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/11.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[if-else]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>

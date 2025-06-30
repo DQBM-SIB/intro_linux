@@ -1,0 +1,418 @@
+---
+title: "Bash"
+output: 
+  xaringan::moon_reader:
+    seal: false
+    libs: libs
+    css: ["css/xaringan.css", "default", "default-fonts"]
+    nature:
+      ratio: '16:9'
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightLines: true
+      highlightSpans: false
+      highlightStyle: github
+      countIncrementalSlides: false
+      countdown: false
+      slideNumberFormat: '%current%'
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+class: inverse, middle, center
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.duplicate.label = "allow")
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+```
+
+
+## .LARGE[.orange[Directory structure and `Bash`]]
+
+---
+
+class: center,hide_logo
+
+background-image: url("")
+background-size: 100%
+background-position: 50% 50%
+
+## .Large[Directory structure]
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(DiagrammeR)
+
+mermaid("
+graph TD
+classDef style_main_node fill:orange,stroke:#333,stroke-width:0px;
+classDef style_sub_node fill:lightgray,stroke:#333,stroke-width:0px;
+
+ A(/) --> B1(home)
+ A --> B2(bin)
+ A --> B3(etc)
+ A --> B4(mnt)
+ B1 --> C1(User1)
+ B1 --> C2(User2)
+ B1 --> C3(User3)
+ B2 --> C4(App1)
+ B2 --> C5(App1)
+
+class A style_main_node;
+class B1,B2,B3,B4,C1,C2,C3,C4,C5 style_sub_node;
+", height = "60%", width = "100%")
+```
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+background-image: url("")
+background-size: 100%
+background-position: 50% 50%
+
+## .Large[Linux command-line has a structure]
+<br><br>
+.content-box-yellow[
+.LARGE[**student@biodocker:~$**]
+]
+
+
+.content-box-grey[.Large[.orange[**PROMPT**]]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+## .Large[Linux command-line has a structure]
+<br><br>
+
+.content-box-yellow[
+.LARGE[**student@biodocker:~$ .blue[command] .green[option] .red[argument]**]
+]
+
+.left[
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;.content-box-grey[.Large[.orange[**PROMPT**]]]  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; .content-box-grey[.Large[.blue[**`ls`**]]] &emsp;&emsp;&emsp;&emsp; .content-box-grey[.Large[.green[**`-l`**]]]&emsp;&emsp;&emsp;&emsp;&emsp; .content-box-grey[.Large[.red[**`/`**]]]
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+--
+<br>
+<br>
+
+.content-box-red[
+.Large[**Name two folders that you see after running the above command.**]
+]
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Exercise]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+Enter into the `Docker` container. .blue[`./login_student.sh`]
+
+--
+
+List the files. .blue[`ls`]
+
+--
+
+Change directory to root using `cd` command. .blue[`cd /`]
+
+--
+
+Display the content of root. .blue[`ls`]
+
+--
+
+Look for help for `ls` command using option `--help`. .blue[`ls --help`]
+
+--
+
+Display the content in "long listing format". .blue[`ls -l`]
+
+--
+
+Display the content in "long listing format" + "sort by modification time". .blue[`ls -l -t`]
+
+--
+
+Display the content in "long listing format" + "sort by modification time" + "reverse the order of sorting". .blue[`ls -l -t -r`]
+
+--
+
+Print the working directory using `pwd` command. .blue[`pwd`]
+
+--
+
+Check your user name by `whoami` command. .blue[`whoami`]
+
+--
+
+_.blue[.center[.Large[**Most command names are abbreviations of their function.**]]]_
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/03.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[Path to navigate]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/04.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[Path to navigate]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Some important symbols/ commands]]
+
+<br>
+
+.large[
+| Symbols/ Commands  | Descriptions |
+| ------------- | ------------- |
+| **`.`** | current directory |
+| **`..`** | directory up in heirarchy |
+| **`cd`** or **`cd ~`** or **`cd ~/`**|  change directory to home directory |
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Some important symbols/ commands]]
+
+.large[
+| Symbols/ Commands  | Descriptions |
+| ------------- | ------------- |
+| **`touch`** | create a file |
+| **`*`** | list out all the files |
+| List**`?`** | any file that begins with List followed by 1 character |
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Exercise]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+.content-box-red[
+.large[
+**Make a folder in your home directory: test. Enter into the test folder. Create some files using `touch` command: test1.txt, test2.txt, abc.txt, DEF.txt, 1file.txt, and bcd.txt. Display all files, display all test files using `?`, and display files starting with a.**
+]
+]
+
+--
+
+```bash
+cd ~/ # go to home directory
+
+mkdir test # make a test directory
+
+cd test # change directory
+
+touch test1.txt test2.txt abc.txt DEF.txt 1file.txt bcd.txt # create files
+
+ls # display all files
+
+ls test?.txt # display all test files
+
+ls a* # display all files starting with a
+
+```
+---
+
+class: left,hide_logo
+
+## .Large[.center[Some important symbols/ commands]]
+
+.large[
+| Symbols/ Commands  | Descriptions |
+| ------------- | ------------- |
+| **`[`**abc**`]*`** | any file that begins with either ‘a’ or ‘b’ or ‘c’ and ending with any number of characters |
+| **`[[:upper:]]*`** | any file that begins with an uppercase letter |
+| **`[![:upper:]]*`** | any file that does notbegins with an uppercase letter |
+| **`[[:digit:]]*`** | any file that begins with digit |
+| **`[![:digit:]]*`** | any file that does not begins with digit |
+| **`[`**a-d**`]???`** | any file that begins from a range of a-d and followed by exactly 3 character |
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Some important symbols/ commands]]
+
+<br>
+
+.large[
+| Symbols/ Commands  | Descriptions |
+| ------------- | ------------- |
+| **`echo`** | display argument |
+| **`$*`** | stored variables |
+| **`history`** | display history of your activity |
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Exercise]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+.content-box-red[
+.large[
+**Print "Hello World!". Store "Hello World!" in a varaible named `hello`. Display the history of your activity.**
+]
+]
+
+--
+
+```bash
+echo "Hello World!" # print
+
+hello="Hello World!" # store into a variable
+echo $hello # print content of variable
+
+history # display history of your activity
+```
+---
+
+class: left,hide_logo
+
+## .Large[.center[Some important symbols/ commands]]
+
+.large[
+| Symbols/ Commands  | Descriptions |
+| ------------- | ------------- |
+| **`mkdir`** | make a directory |
+| **`rmdir`** | remove a directory |
+| **`rm`** | remove  files/ directories |
+| **`cp`** | copy files/ directories |
+| **`mv`** | move  files/ directories |
+| **`wget`** | download file from internet |
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Some important symbols/ commands]]
+
+.large[
+| Symbols/ Commands  | Descriptions |
+| ------------- | ------------- |
+| **`less`, `more`, `head`, `tail`, `cat`** | show content |
+| **`grep`, `cut`, `uniq`, `sort`** | search or extract or modify or sort |
+| **`tr`** | string manipulation |
+| **`wc`** | count |
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>`Bash`</b>] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+--
+
+<br>
+
+.content-box-red[
+.Large[
+**[arabidopsis.org/download_files/Genes/TAIR10_genome_release/
+TAIR10_gff3/TAIR10_GFF3_genes.gff](https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff)**
+]
+]

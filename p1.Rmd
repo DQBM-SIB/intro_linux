@@ -1,0 +1,389 @@
+---
+title: ""
+output: 
+  xaringan::moon_reader:
+    seal: false
+    libs: libs
+    css: ["css/xaringan.css", "default", "default-fonts"]
+    nature:
+      ratio: '16:9'
+      # beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightLines: true
+      highlightSpans: false
+      highlightStyle: github
+      countIncrementalSlides: false
+      countdown: false
+      slideNumberFormat: '%current%'
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+class: inverse, middle, center
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.duplicate.label = "allow")
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+```
+
+## .LARGE[.orange[UNIX]]
+
+---
+
+class: center,hide_logo
+
+background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/1b/Ken_Thompson_and_Dennis_Ritchie--1973.jpg")
+background-size: 65%
+background-position: 50% 10%
+
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+--
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+.content-box-yellow[.Large[Ken Thompson]] &emsp;&emsp;&emsp;&emsp; .content-box-yellow[.Large[Dennis Ritchie]]
+
+<div class="my-footer"><span> <a href="https://en.wikipedia.org/wiki/History_of_Unix">`r icons::fontawesome("wikipedia-w")` wikipedia.org/wiki/History_of_Unix</span></div>
+
+???
+
+- MIT, Bell Labs, and General Electric were developing **Multics**
+- Can only be used by copy-writers
+- Not free
+- Bell Labs team, including Ken Thompson and Dennis Ritchie, worked on Multics until 1969 when Bell Labs withdrew from the project 
+- They took some of Multics' best ideas but implemented them in a simpler, more practical way
+
+---
+
+class: center,hide_logo
+
+background-image: url("https://www.helsinkitimes.fi/images/2021/Oct/linus.jpg")
+background-size: 60%
+background-position: 50% 10%
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+--
+
+.content-box-yellow[.Large[Linus Torvalds]]
+
+<div class="my-footer"><span> <a href="https://www.helsinkitimes.fi/finland/news-in-brief/20083-linus-torvalds-a-finnish-swede-who-changed-computing-forever.html">`r icons::fontawesome("globe")` helsinkitimes.fi</span></div>
+
+
+???
+
+- Finnish-American software engineer best known for creating Linux and Git
+- Created Linux in 1991 while a student at the University of Helsinki
+- Created Git in 2005
+- Advocates for open source software
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://computerscience.chemeketa.edu/cs160Reader/_images/operating-system-logos.jpg")
+background-size: 65%
+background-position: 50% 50%
+
+<div class="my-footer"><span> <a href="https://computerscience.chemeketa.edu/cs160Reader/OperatingSystems/OperatingSystems.html">`r icons::fontawesome("globe")` computerscience.chemeketa.edu</span></div>
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+???
+
+- Macintosh
+- Linux
+- Windows
+- iOS
+- Android
+- FreeBSD
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://tecadmin.net/tutorial/wp-content/uploads/2017/10/linux-architecture-image.png")
+background-size: 60%
+background-position: 50% 50%
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://tecadmin.net/tutorial/wp-content/uploads/2017/10/linux-architecture-image.png")
+background-size: 50%
+background-position: 0% 90%
+
+## .center[.Large[Linux System Architecture: .blue[A Layered Approach]]]
+
+.pull-right[
+
+## Hardware Layer (Core)
+
+.large[
+**Location:** Center of the architecture
+
+**Components:**
+- CPU
+- Memory (RAM)
+- Storage devices
+- Input/output devices
+
+**Role:** Physical foundation of the system
+]
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://tecadmin.net/tutorial/wp-content/uploads/2017/10/linux-architecture-image.png")
+background-size: 50%
+background-position: 0% 90%
+
+## .center[.Large[Linux System Architecture: .blue[A Layered Approach]]]
+
+.pull-right[
+
+## Kernel Layer
+
+.large[
+**Location:** First ring around hardware
+
+**Functions:**
+- Memory management
+- Process scheduling
+- Device driver management
+
+**Key point:** Direct interface with hardware
+]
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://tecadmin.net/tutorial/wp-content/uploads/2017/10/linux-architecture-image.png")
+background-size: 50%
+background-position: 0% 90%
+
+## .center[.Large[Linux System Architecture: .blue[A Layered Approach]]]
+
+.pull-right[
+
+## Shell Layer
+
+.large[
+**Location:** Second ring around hardware
+
+**Purpose:**
+- Command interpretation
+- Script execution
+- User interface to kernel services
+
+**Types:** `Bash`, `sh`
+]
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://tecadmin.net/tutorial/wp-content/uploads/2017/10/linux-architecture-image.png")
+background-size: 50%
+background-position: 0% 90%
+
+## .center[.Large[Linux System Architecture: .blue[A Layered Approach]]]
+
+.pull-right[
+
+## Applications Layer
+
+.large[
+**Location:** Outermost ring before users
+
+**Contains:**
+- User applications
+- System utilities
+- Development tools
+- Graphical interfaces
+]
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://tecadmin.net/tutorial/wp-content/uploads/2017/10/linux-architecture-image.png")
+background-size: 50%
+background-position: 0% 90%
+
+## .center[.Large[Linux System Architecture: .blue[A Layered Approach]]]
+
+.pull-right[
+
+## Users (External Layer)
+
+.large[
+**Location:** Surrounding the system
+
+**Interaction:**
+- Multiple users can access simultaneously
+- Each user has defined permissions
+- Users interact through applications
+
+**Key point:** Direct interface with hardware
+]
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://tecadmin.net/tutorial/wp-content/uploads/2017/10/linux-architecture-image.png")
+background-size: 50%
+background-position: 0% 90%
+
+## .center[.Large[Linux System Architecture: .blue[A Layered Approach]]]
+
+.pull-right[
+
+## Interaction Flow
+
+.large[
+.blue[User] initiates action through .green[application]
+
+.green[Application] communicates with .orange[shell]
+
+.orange[Shell] interprets and sends to .red[kernel]
+
+.red[Kernel] manages .blue1[hardware] resources
+
+Results flow back through layers to .blue[user]
+]
+]
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+background-image: url("https://miro.medium.com/max/4800/0*EjMD-aiWVAoq09IB.jpg")
+background-size: 65%
+background-position: 50% 10%
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+---
+
+class: center,hide_logo
+
+background-image: url("https://developer.ibm.com/developer/default/tutorials/l-linux-shells/images/figure1.gif")
+background-size: 80%
+background-position: 50% 70%
+
+## .Large[Evolution of shells in Linux]
+
+<div class="my-footer"><span> <a href="https://developer.ibm.com/tutorials/l-linux-shells/">`r icons::fontawesome("globe")` developer.ibm.com/tutorials/l-linux-shells</span></div>
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/02.png")
+background-size: 95%
+background-position: 50% 10%
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: center,hide_logo
+
+background-image: url()
+background-size: 0%
+background-position: 50% 50%
+
+## .Large[Bourne again shell]
+
+<div class="my-footer1" style="text-align: center;background-color:#FEE0D2;"> .blue[<b>Background</b>] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Scripting] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+--
+
+![](https://miro.medium.com/max/1080/1*v4o2AXLIJaHSZmqYZk26qA.jpeg)
