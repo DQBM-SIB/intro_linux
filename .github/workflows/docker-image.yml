@@ -7,12 +7,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-
-      # Step 1: Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Docker Buildx (enables multi-platform builds)
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -20,10 +17,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          # list of Docker images to use as base name for tags
-          images: |
-            dktanwar/intro_linux
-          tags: latest
+          images: dktanwar/intro_linux
+          tags: |
+            type=raw,latest
+            type=sha
 
       - name: Log in to Docker Hub
         run: |
@@ -31,14 +28,13 @@ jobs:
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
         shell: bash
 
-      # Step 5: Build and push Docker image to GHCR
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: ./Docker
           platforms: linux/amd64
           push: true
-          tags: |
-            ${{ steps.meta.outputs.tags }}
+          pull: true
+          tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
