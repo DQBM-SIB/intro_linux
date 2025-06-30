@@ -1,5 +1,5 @@
 # Use a lightweight Linux image
-FROM ubuntu:24.04.2
+FROM ubuntu:24.04
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
