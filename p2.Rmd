@@ -81,7 +81,7 @@ background-position: 50% 50%
 ## .Large[Linux command-line has a structure]
 <br><br>
 .content-box-yellow[
-.LARGE[**student@biodocker:~$**]
+.LARGE[**root in linux /**]
 ]
 
 
@@ -101,7 +101,7 @@ class: center,hide_logo
 <br><br>
 
 .content-box-yellow[
-.LARGE[**student@biodocker:~$ .blue[command] .green[option] .red[argument]**]
+.LARGE[**root in linux / .blue[command] .green[option] .red[argument]**]
 ]
 
 .left[
