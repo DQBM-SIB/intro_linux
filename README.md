@@ -14,7 +14,7 @@ Please see the detailed instruction from https://git-scm.com/book/en/v2/Getting-
 ### Clone the repository
 
 ```bash
-git clone [https://github.com/urppeia/docker_bio_609_610.git](https://github.com/DQBM-SIB/intro_linux.git)
+git clone https://github.com/DQBM-SIB/intro_linux.git
 ```
 
 or download (Code / Download ZIP on the right) and extract to a local folder on your computer.
