@@ -1,0 +1,261 @@
+---
+title: "Linux Command Line Exercise with Arabidopsis GFF3 File"
+format: html
+---
+
+# Linux Command Line Practical Exercise  
+**Dataset:** [Arabidopsis_thaliana.TAIR10.61.gff3.gz](ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-61/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.61.gff3.gz)
+
+---
+
+## Part 1: Setup and File Download
+
+Download the file and prepare a working directory.
+
+```bash
+# Go to yout home directory
+cd $HOME
+
+# Create a directory named "arabidopsis_data"
+mkdir arabidopsis_data
+
+# Move into the directory
+cd arabidopsis_data
+
+# Download the GFF3 file using wget
+wget ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-61/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.61.gff3.gz
+````
+
+**Questions:**
+
+1. Verify that the file was downloaded successfully by listing the directory contents.
+
+::: {.callout-tip collapse="true"}
+```bash
+ls
+```
+:::
+
+2. Use `file` command to check the file type.
+
+::: {.callout-tip collapse="true"}
+```bash
+file Arabidopsis_thaliana.TAIR10.61.gff3.gz
+```
+:::
+
+---
+
+## Part 2: Viewing File Contents
+
+The file is compressed. Use `gunzip` to decompressing the file. Use `head` and `tail` to peek at file start/end.
+
+```bash
+# uncompress the file
+gunzip Arabidopsis_thaliana.TAIR10.61.gff3.gz
+```
+
+```bash
+# View first 20 lines using head and cat with pipe
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | head -n 20
+
+# View last 10 lines using tail
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | tail -n 10
+```
+
+**Questions:**
+
+1. How many sequence-region lines are in the first 20 lines?
+
+::: {.callout-tip collapse="true"}
+```bash
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | grep "sequence-region" | wc -l
+```
+:::
+
+
+2. What chromosome names are listed in the sequence-region lines?
+
+---
+
+## Part 3: Search and Extract with grep, cut
+
+Extract all values of the "Name" attribute from the file.
+
+```bash
+# Extract all 'Name' attributes using grep and cut
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | grep -o 'Name=[^;]*' | cut -d= -f2 | head -n 10
+```
+
+**Questions:**
+
+1. How many unique gene names are in the first 1000 lines without #?
+
+::: {.callout-tip collapse="true"}
+```bash
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | grep -v "#" | head -n 1000 | grep "ID=gene"| grep -o 'Name=[^;]*' | cut -d= -f2 | sort | uniq
+```
+:::
+
+2. Extract and save all gene names into a file called `gene_names.txt`.
+
+::: {.callout-tip collapse="true"}
+```bash
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | grep -v "#" | grep "ID=gene"| grep -o 'Name=[^;]*' | cut -d= -f2 > gene_names.txt
+```
+:::
+
+
+---
+
+## Part 4: Sort and Uniq
+
+Sort gene names and count unique occurrences.
+
+```bash
+# Sort and find unique names and their counts
+sort gene_names.txt | uniq -c | sort -nr | head -n 5
+```
+
+**Questions:**
+
+1. Which gene name appears most frequently in the file?
+2. How many times does it appear?
+
+---
+
+## Part 5: String Manipulation with tr
+
+Replace all commas in the file with semicolons and save output.
+
+```bash
+# Replace commas with semicolons and write to new file
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | tr ',' ';' > Arabidopsis_no_commas.gff3
+```
+
+**Questions:**
+
+1. Verify that commas were replaced by checking the first 10 lines of the new file.
+2. How many commas are there in the original file? Use `grep` and `wc` to find out.
+
+---
+
+## Part 6: Count lines, words, bytes with wc
+
+Count lines and words in the gene names file.
+
+```bash
+wc -l gene_names.txt
+wc -w gene_names.txt
+```
+
+**Questions:**
+
+1. How many gene names are listed in total?
+2. What is the total number of words?
+
+---
+
+## Part 7: File and Directory Operations (mkdir, rmdir, rm, cp, mv)
+
+```bash
+# Create a backup directory
+mkdir backup
+
+# Copy gene names file to backup
+cp gene_names.txt backup/
+
+# Move into backup directory
+cd backup
+
+# Rename the file
+mv gene_names.txt gene_names_backup.txt
+
+# Go back to parent directory
+cd ..
+
+# Remove the backup directory and its contents
+rm -r backup
+```
+
+**Questions:**
+
+1. What does `rm -r` do compared to `rm` alone?
+2. Try to remove a non-empty directory with `rmdir`. What happens?
+
+---
+
+## Part 8: Output Redirection and Pipes
+
+```bash
+# Redirect output to file using >
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | head -n 50 > top50_lines.gff3
+
+# Append more lines using >>
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | tail -n 50 >> top50_lines.gff3
+
+# Combine output and error to a log file
+grep 'chromosome' Arabidopsis_thaliana.TAIR10.61.gff3.gz &> grep_output.log
+
+# Count how many chromosome entries there are using pipes
+cat Arabidopsis_thaliana.TAIR10.61.gff3 | grep 'chromosome' | wc -l
+```
+
+**Questions:**
+
+1. What is the difference between `>` and `>>`?
+2. What does `&>` do?
+3. Check the contents of `grep_output.log`. Does it contain error messages?
+
+---
+
+## Part 9: Standard Input Redirection (<<)
+
+```bash
+# Use here-document to create a small test file
+cat << EOF > test_file.txt
+This is a test file.
+It has multiple lines.
+End of file.
+EOF
+
+# Display the file content
+cat test_file.txt
+```
+
+**Questions:**
+
+1. Modify the here-document to add two more lines of your choice.
+
+::: {.callout-tip collapse="true"}
+```bash
+cat << EOF > test_file.txt
+This is a test file.
+It has multiple lines.
+These are two extra lines added for the exercise.
+They demonstrate the here-document functionality.
+End of file.
+EOF
+```
+:::
+
+2. How is `<<` different from `<`?
+
+::: {.callout-tip collapse="true"}
+| Symbol | Description                                                                                                                                     |
+| ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<`    | Redirects a file as input to a command (standard input redirection). Example: `sort < file.txt` reads input from `file.txt`.                    |
+| `<<`   | Starts a **here-document**, which allows you to provide multi-line input directly in the terminal/script, terminated by a delimiter like `EOF`. |
+:::
+
+---
+
+# Bonus Challenges
+
+1. Count the number of lines in the GFF3 file that correspond to mRNA features on chromosome 1 only. Use pipes, grep, and wc.
+
+2. Extract all gene names (attribute "Name") that belong to the "protein\_coding" biotype. Hint: filter lines containing `biotype=protein_coding` and extract names.
+
+3. Using redirection and pipes, save the first 100 unique gene names sorted alphabetically to a new file `unique_genes.txt`.
+
+4. Download the file again but redirect both stdout and stderr to a log file. Check if any errors occurred.
