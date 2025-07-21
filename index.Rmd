@@ -60,10 +60,10 @@ class: inverse, middle, center
 ```   
 
 
-<!-- --- -->
+---
 
-<!-- ```{r child='p4.Rmd'} -->
-<!-- ``` -->
+```{r child='p4.Rmd'}
+```
 
 <!-- --- -->
 

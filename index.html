@@ -473,8 +473,8 @@ background-position: 50% 50%
 
 ## .Large[Directory structure]
 
-<div id="htmlwidget-b4859ccaf65b4cb2b7f7" style="width:100%;height:60%;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b4859ccaf65b4cb2b7f7">{"x":{"diagram":"\ngraph TD\nclassDef style_main_node fill:orange,stroke:#333,stroke-width:0px;\nclassDef style_sub_node fill:lightgray,stroke:#333,stroke-width:0px;\n\n A(/) --> B1(home)\n A --> B2(bin)\n A --> B3(etc)\n A --> B4(mnt)\n B1 --> C1(User1)\n B1 --> C2(User2)\n B1 --> C3(User3)\n B2 --> C4(App1)\n B2 --> C5(App1)\n\nclass A style_main_node;\nclass B1,B2,B3,B4,C1,C2,C3,C4,C5 style_sub_node;\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-63d35a4b5ec1a424bf74" style="width:100%;height:60%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-63d35a4b5ec1a424bf74">{"x":{"diagram":"\ngraph TD\nclassDef style_main_node fill:orange,stroke:#333,stroke-width:0px;\nclassDef style_sub_node fill:lightgray,stroke:#333,stroke-width:0px;\n\n A(/) --> B1(home)\n A --> B2(bin)\n A --> B3(etc)\n A --> B4(mnt)\n B1 --> C1(User1)\n B1 --> C2(User2)\n B1 --> C3(User3)\n B2 --> C4(App1)\n B2 --> C5(App1)\n\nclass A style_main_node;\nclass B1,B2,B3,B4,C1,C2,C3,C4,C5 style_sub_node;\n"},"evals":[],"jsHooks":[]}</script>
 
 &lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
 &lt;div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;`Bash`&lt;/b&gt;] &lt;/div&gt;
@@ -950,10 +950,292 @@ background-position: 50% 50%
 &lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
 
 
-&lt;!-- --- --&gt;
+---
 
-&lt;!-- ```{r child='p4.Rmd'} --&gt;
-&lt;!-- ``` --&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class: inverse, middle, center
+
+
+
+
+## .LARGE[.orange[`Bash` scripting]]
+
+---
+
+## .Large[.center[Text editors]]
+
+&lt;br&gt;
+
+- .LARGE[`nano`]
+
+- .LARGE[`vim`]
+
+- .LARGE[`emacs`]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+
+---
+
+
+## .Large[.center[Bash scripts]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+```bash
+#!/bin/bash
+
+# This script will print ...
+
+echo "Hello World!"
+```
+]
+
+
+.pull-right[
+```bash
+# shebang line
+
+# a comment
+
+# code
+```
+]
+
+--
+
+.pull-left[
+```bash
+#!/bin/bash
+
+# This script will print my name
+
+name="Deepak Tanwar"
+
+echo "Hello $name!"
+```
+]
+
+.pull-right[
+```bash
+# shebang line
+
+# a comment
+
+# store name in a variable
+
+# print name
+```
+]
+
+---
+
+## .Large[.center[Bash script]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+.content-box-red[
+**Using `nano`, write a script to print your name.**
+]
+
+```bash
+nano name.sh # create a file using nano
+
+#!/bin/bash
+echo "Deepak Tanwar"
+
+# close the file with ctrl + x
+```
+
+--
+
+.content-box-red[
+**Redirect output as STDOUT: `name.stdout`.**
+]
+
+```bash
+bash name.sh &gt; name.stdout
+```
+---
+
+## .Large[.center[Bash script]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+
+.content-box-red[
+**Redirect output as STDERR: `name.stderr`.**
+]
+
+```bash
+bash name.sh 2&gt; name.stderr
+```
+
+--
+.content-box-red[
+**Append `name.stdout` with your favourite animal.**
+]
+
+```bash
+echo "Tiger" &gt;&gt; name.stdout
+```
+---
+
+## .Large[.center[Bash script]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+
+.content-box-red[
+**Append `name.stderr` with your favourite food.**
+]
+
+```bash
+echo "Fondue" 2&gt;&gt; name.stderr
+```
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/06.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[Flow control]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/07.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[`for` loop]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/08.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[`for` loop]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/09.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[`while` loop]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/10.png")
+background-size: 60%
+background-position: 50% 80%
+
+## .Large[if-else]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/11.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[if-else]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
 
 &lt;!-- --- --&gt;
 

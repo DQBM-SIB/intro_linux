@@ -12,7 +12,7 @@ LABEL description="Simple Docker container for Bash teaching"
 # Update and install necessary tools
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        bash coreutils nano vim curl wget \
+        bash coreutils nano vim curl wget less \
         apt-utils sudo rsync gdebi-core && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
