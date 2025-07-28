@@ -179,6 +179,34 @@ echo "Fondue" 2&gt;&gt; name.stderr
 
 ---
 
+## .Large[.center[Exercise]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+
+## Write a `bash` script for the following commands execution:
+
+.Large[
+
+1. Make a `script` named `print_comments_tair10.sh`.
+
+2. Define a `shebang` line for the script to be executed with `bash`.
+
+3. `cat` `Arabidopsis_thaliana.TAIR10.61.gff3` file, present in your home directory.
+
+4. Print only the commented lines, the one which starts with `#` symbol.
+
+5. Save this information in a new file: `tair10_info.txt`.
+
+6. Execute the script.
+
+]
+---
+
 class: center,hide_logo
 
 background-image: url("figs/06.png")
@@ -228,6 +256,28 @@ background-position: 50% 80%
 
 ---
 
+class: left,hide_logo
+
+## .Large[.center[Exercise]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+.Large[
+1. Make a `script` named `list_root_files.sh`.
+
+2. Define a `shebang` line for the script to be executed with `bash`.
+
+3. List the file type for each folder/file present in the `root` (`/`) directory of your of your system.
+
+4. Execute the `script`
+
+]
+---
+
 class: center,hide_logo
 
 background-image: url("figs/09.png")
@@ -273,21 +323,46 @@ background-position: 50% 80%
 &lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
 &lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
 &lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Exercise]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Scripting&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+.Large[
+1. Make a `script` named `check_symlink.sh`.
+
+2. Define a `shebang` line for the script to be executed with `bash`.
+
+3. Check if the files present in `/bin/` directory is a `symlink` or not. You can use: `if [[ -L "$i" ]]`
+
+4. If it is a `symlink`, print: `file is a symlink`. Here. file is the name of the file you are checking.
+
+5. Execute the script.
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="addons/macros.js"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>
 <script>var slideshow = remark.create({
-"ratio": "16:9",
-"highlightLines": true,
-"highlightSpans": false,
-"highlightStyle": "github",
-"countIncrementalSlides": false,
-"slideNumberFormat": "%current%",
-"navigation": {
-"scroll": false
-}
+  "ratio": "16:9",
+  "highlightLines": true,
+  "highlightSpans": false,
+  "highlightStyle": "github",
+  "countIncrementalSlides": false,
+  "slideNumberFormat": "%current%",
+  "navigation": {
+    "scroll": false
+  }
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

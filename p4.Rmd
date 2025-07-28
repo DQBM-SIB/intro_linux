@@ -191,6 +191,34 @@ echo "Fondue" 2>> name.stderr
 
 ---
 
+## .Large[.center[Exercise]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+
+## Write a `bash` script for the following commands execution:
+
+.Large[
+
+1. Make a `script` named `print_comments_tair10.sh`.
+
+2. Define a `shebang` line for the script to be executed with `bash`.
+
+3. `cat` `Arabidopsis_thaliana.TAIR10.61.gff3` file, present in your home directory.
+
+4. Print only the commented lines, the one which starts with `#` symbol.
+
+5. Save this information in a new file: `tair10_info.txt`.
+
+6. Execute the script.
+
+]
+---
+
 class: center,hide_logo
 
 background-image: url("figs/06.png")
@@ -240,6 +268,28 @@ background-position: 50% 80%
 
 ---
 
+class: left,hide_logo
+
+## .Large[.center[Exercise]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+.Large[
+1. Make a `script` named `list_root_files.sh`.
+
+2. Define a `shebang` line for the script to be executed with `bash`.
+
+3. List the file type for each folder/file present in the `root` (`/`) directory of your of your system.
+
+4. Execute the `script`
+
+]
+---
+
 class: center,hide_logo
 
 background-image: url("figs/09.png")
@@ -285,3 +335,28 @@ background-position: 50% 80%
 <div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
 <div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
 <div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+---
+
+class: left,hide_logo
+
+## .Large[.center[Exercise]]
+
+<div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"> .grey[Background] </div>
+<div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[`Bash`] </div>
+<div class="my-footer3" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"> .blue[<b>Scripting</b>] </div>
+<div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Permissions] </div>
+<div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"> .grey[Exercise] </div>
+
+.Large[
+1. Make a `script` named `check_symlink.sh`.
+
+2. Define a `shebang` line for the script to be executed with `bash`.
+
+3. Check if the files present in `/bin/` directory is a `symlink` or not. You can use: `if [[ -L "$i" ]]`
+
+4. If it is a `symlink`, print: `file is a symlink`. Here. file is the name of the file you are checking.
+
+5. Execute the script.
+
+]
