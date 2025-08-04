@@ -65,15 +65,15 @@ class: inverse, middle, center
 ```{r child='p4.Rmd'}
 ```
 
-<!-- --- -->
+---
 
-<!-- ```{r child='p5.Rmd'} -->
-<!-- ``` -->
+```{r child='p5.Rmd'}
+```
 
-<!-- --- -->
+---
 
-<!-- ```{r child='p6.Rmd'} -->
-<!-- ``` -->
+```{r child='p6.Rmd'}
+```
 
 ---
 

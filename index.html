@@ -473,8 +473,8 @@ background-position: 50% 50%
 
 ## .Large[Directory structure]
 
-<div id="htmlwidget-f7f339fb6faf7f22ff07" style="width:100%;height:60%;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f7f339fb6faf7f22ff07">{"x":{"diagram":"\ngraph TD\nclassDef style_main_node fill:orange,stroke:#333,stroke-width:0px;\nclassDef style_sub_node fill:lightgray,stroke:#333,stroke-width:0px;\n\n A(/) --> B1(home)\n A --> B2(bin)\n A --> B3(etc)\n A --> B4(mnt)\n B1 --> C1(User1)\n B1 --> C2(User2)\n B1 --> C3(User3)\n B2 --> C4(App1)\n B2 --> C5(App1)\n\nclass A style_main_node;\nclass B1,B2,B3,B4,C1,C2,C3,C4,C5 style_sub_node;\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1cfd38d21ed443bd1c62" style="width:100%;height:60%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1cfd38d21ed443bd1c62">{"x":{"diagram":"\ngraph TD\nclassDef style_main_node fill:orange,stroke:#333,stroke-width:0px;\nclassDef style_sub_node fill:lightgray,stroke:#333,stroke-width:0px;\n\n A(/) --> B1(home)\n A --> B2(bin)\n A --> B3(etc)\n A --> B4(mnt)\n B1 --> C1(User1)\n B1 --> C2(User2)\n B1 --> C3(User3)\n B2 --> C4(App1)\n B2 --> C5(App1)\n\nclass A style_main_node;\nclass B1,B2,B3,B4,C1,C2,C3,C4,C5 style_sub_node;\n"},"evals":[],"jsHooks":[]}</script>
 
 &lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
 &lt;div class="my-footer2" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;`Bash`&lt;/b&gt;] &lt;/div&gt;
@@ -1312,15 +1312,351 @@ class: left,hide_logo
 
 ]
 
-&lt;!-- --- --&gt;
+---
 
-&lt;!-- ```{r child='p5.Rmd'} --&gt;
-&lt;!-- ``` --&gt;
 
-&lt;!-- --- --&gt;
 
-&lt;!-- ```{r child='p6.Rmd'} --&gt;
-&lt;!-- ``` --&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class: inverse, middle, center
+
+
+
+
+## .LARGE[.orange[Setting path and permissions]]
+
+---
+
+## .Large[.center[Setting path]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Permissions&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+
+&lt;br&gt;
+```bash
+export PATH="/path/to/dir:$PATH"
+```
+&lt;br&gt;
+
+--
+
+```bash
+export PATH="/path/to/dir:$PATH" &gt;&gt; ~/.bash_profile
+```
+
+&lt;br&gt;
+
+--
+
+```bash
+export PATH="/path/to/dir:$PATH" &gt;&gt; ~/.bashrc
+```
+
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/12.png")
+background-size: 100%
+background-position: 50% 80%
+
+## .Large[Permissions and changing permissions]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Permissions&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+---
+
+class: center,hide_logo
+
+background-image: url("figs/13.png")
+background-size: 70%
+background-position: 50% 80%
+
+## .Large[Permissions and changing permissions]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Permissions&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/14.png")
+background-size: 90%
+background-position: 50% 90%
+
+## .Large[Permissions and changing permissions]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Permissions&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+---
+
+## .Large[.center[Power of `&amp;&amp;`]]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Permissions&lt;/b&gt;] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Exercise] &lt;/div&gt;
+
+
+
+.Large[Do a **task2** only after **task1** is completed]
+
+--
+
+### Not working example
+```bash
+echo "Hello"; echo "World"
+```
+
+--
+
+### Working example
+```bash
+echo "Hello" &amp;&amp; echo "World"
+```
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class: inverse, middle, center
+
+
+
+
+## .LARGE[.orange[Testing your knowledge]]
+
+---
+
+## .Large[Problem 1]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Exercise&lt;/b&gt;] &lt;/div&gt;
+
+
+.large[
+PFAM is a domain database. It also includes domains that have already been computed for all proteomes. The most recent version is available here: [https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/). Each file represents a proteome, which is recognized by its taxonomy ID. The ID `9606` belongs to a human. Each of these files is tab-delimited, with the domain ID in the sixth column. Using `wget`, download the human proteome file. After downloading, run a single line of `bash` commands to determine the number of domain types (unique domains) in the human genome. You may use as many commands as you want, connected together in `pipes`.
+]
+
+--
+
+&lt;br&gt;
+```perl
+wget https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/9606.tsv.gz
+```
+--
+```perl
+zcat 9606.tsv.gz | cut -f 6 | grep -v "#" | sort| uniq | wc -l
+```
+--
+&lt;br&gt;
+```perl
+6680
+```
+
+---
+
+## .Large[Problem 2]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Exercise&lt;/b&gt;] &lt;/div&gt;
+
+.large[
+Download the covid19 fasta file from [https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam_SARS-CoV-2_2.0/](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam_SARS-CoV-2_2.0/) using `wget` command.
+
+1. How many proteins are there?
+2. How many amino acids are there?
+3. Take only the protein sequences, and convert them to lower case.
+]
+
+--
+&lt;br&gt;
+
+```perl
+cat covid-19.fasta | grep "&gt;" | wc -l
+```
+
+--
+
+```perl
+cat covid-19.fasta | grep -v "&gt;" | tr -d "\n" | wc -c
+```
+
+--
+
+```perl
+cat covid-19.fasta | grep -v "&gt;" | tr [:upper:] [:lower:]
+```
+
+---
+
+## .Large[Problem 3]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Exercise&lt;/b&gt;] &lt;/div&gt;
+
+.large[
+PFAM is a domain database. It also includes domains that have already been computed for all proteomes. The most recent version is available here: [https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/](https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/). Each file represents a proteome, which is recognized by its taxonomy ID. The ID `9606` belongs to a human. Each of these files is tab-delimited, with the domain ID in the sixth column.
+
+1. Make a directory in your home folder `software/bin`.
+2. Change directory to `software/bin`.
+3. Write a `bash` script that take an input: taxonomy ID.
+4. If file does not exist, Script should download the proteome file for the input taxonomy ID.
+5. Script should run a single line of `bash` commands to determine the number of domain types (unique domains) in the genome.
+6. Run step 5 **only if** step 4 is finished.
+7. Save your file as `count_uniq_domains`
+8. Add your script to `PATH`
+9. Go to your home folder.
+10. Create a `bash` script that will run `count_uniq_domains` (without specifying path). This script should store `STDOUT` and `STDERR`.
+]
+
+---
+
+## .Large[Problem 3]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Exercise&lt;/b&gt;] &lt;/div&gt;
+
+
+```bash
+# 1 and 2
+
+cd ~/
+mkdir software
+cd software
+mkdir bin
+```
+---
+
+## .Large[Problem 3]
+
+
+```bash
+# 3, 4, 5, 6, and 7
+
+nano count_uniq_domains
+
+#!/bin/bash
+
+txid=$1
+txid2=$txid.final.tsv.gz
+
+if [ -e $txid2 ]
+        then
+zcat $txid2 | grep -v "#" | cut -f 6 | sort| uniq| wc -l
+        else
+wget https://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/proteomes/$txid.tsv.gz &amp;&amp;\
+ mv $txid.tsv.gz $txid2 &amp;&amp;\
+ zcat $txid2 | grep -v "#" | cut -f 6 | sort| uniq| wc -l
+fi
+```
+
+---
+
+## .Large[Problem 3]
+
+&lt;div class="my-footer1" style="text-align: center;background-color:#D9D9D9;"&gt; .grey[Background] &lt;/div&gt;
+&lt;div class="my-footer2" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[`Bash`] &lt;/div&gt;
+&lt;div class="my-footer3" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Scripting] &lt;/div&gt;
+&lt;div class="my-footer4" style="text-align: center;background-color:#D9D9D9;border-left:1px solid black;"&gt; .grey[Permissions] &lt;/div&gt;
+&lt;div class="my-footer5" style="text-align: center;background-color:#FEE0D2;border-left:1px solid black;"&gt; .blue[&lt;b&gt;Exercise&lt;/b&gt;] &lt;/div&gt;
+
+```bash
+# 8
+
+chmod +x count_uniq_domains
+
+export PATH="~/software/bin/:$PATH"
+```
+
+```bash
+# 9
+
+cd ~/
+```
+
+```bash
+# 10
+
+nano run.sh
+
+#!/bin/bash
+
+count_uniq_domains 9696 &gt; STDOUT 2&gt;STDERR
+
+## close the file with ctrl + x
+
+bash run.sh
+```
 
 ---
 

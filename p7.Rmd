@@ -1,0 +1,46 @@
+---
+title: "resources and evaluation"
+output: 
+  xaringan::moon_reader:
+    seal: false
+    libs: libs
+    css: ["css/xaringan.css", "default", "default-fonts"]
+    nature:
+      ratio: '16:9'
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightLines: true
+      highlightSpans: false
+      highlightStyle: github
+      countIncrementalSlides: false
+      countdown: false
+      slideNumberFormat: '%current%'
+      navigation:
+        scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+## .Large[Resources]
+
+https://github.com/urppeia/BIO609_2016
+
+https://github.com/urppeia/BIO609_2017
+
+https://github.com/urppeia/BIO609_2018
+
+https://github.com/urppeia/bio609
+
+https://github.com/urppeia/BIO609_2021
+
+---
+
+class: center,hide_logo
+
+background-image: url("figs/bitly.png")
+background-size: 40%
+background-position: 50% 40%
+
+## .Large[Instructor and Course evaluation]
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+.content-box-green[.blue[.LARGE[[bit.ly/bio609_2024](https://bit.ly/bio609_2024)]]]
