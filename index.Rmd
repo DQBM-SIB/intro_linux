@@ -77,6 +77,12 @@ class: inverse, middle, center
 
 ---
 
+
+```{r child='p7.Rmd'}
+```
+
+---
+
 class: center, middle, hide_logo
 
 .eLarge[.blue[**Thank you for your attention!**]]

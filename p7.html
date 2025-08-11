@@ -3,16 +3,63 @@
   <head>
     <title>resources and evaluation</title>
     <meta charset="utf-8" />
-    <script src="p7_files/header-attrs-2.29/header-attrs.js"></script>
-    <link href="p7_files/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="p7_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="p7_files/header-attrs/header-attrs.js"></script>
+    <link href="p7_files/remark-css/default.css" rel="stylesheet" />
+    <link href="p7_files/remark-css/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/xaringan.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 
 
-## .Large[Resources]
+class: inverse, middle, center
+
+
+
+
+## .LARGE[.orange[Additional]]
+
+---
+
+## .Large[.center[Commands to work with server]]
+
+
+### Login
+
+`ssh user@server`
+
+### Copy from local computer to server
+
+`cp ~/Folder/File user@server:/home/folder/`
+
+`rsync -avP --progress ~/Folder/File user@server:/home/folder/`
+
+### Copy from server to local computer
+
+`cp user@server:/home/folder/ ~/Folder/File`
+
+`rsync -avP --progress user@server:/home/folder/ ~/Folder/File`
+
+---
+
+## .Large[.center[Commands to work with `Docker`]]
+
+### List `docker` containers
+
+`docker ls`
+
+### List `docker` images
+
+`docker image ls`
+
+
+### Copy from `docker` to locak computer
+
+`docker cp &lt;containerId&gt;:/file/path/within/container /host/path/target`
+
+---
+
+## .Large[Additional resources and references]
 
 https://github.com/urppeia/BIO609_2016
 
@@ -35,7 +82,7 @@ background-position: 50% 40%
 ## .Large[Instructor and Course evaluation]
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-.content-box-green[.blue[.LARGE[[bit.ly/bio609_2024](https://bit.ly/bio609_2024)]]]
+.content-box-green[.blue[.LARGE[[bit.ly/linux_dqbm](https://bit.ly/linux_dqbm)]]]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
